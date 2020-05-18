@@ -22,6 +22,6 @@ def create_code(num, length):
 def save_to_redis(num_list):
     r = redis.Redis(host='localhost', port=6379, db=0)
     for code in num_list:
-        r.lpush('code',code)
+        r.lpush('code',code)#将值插入到列表头部
 
 save_to_redis(create_code(200,20))
